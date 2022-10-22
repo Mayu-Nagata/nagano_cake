@@ -1,0 +1,49 @@
+<div class="col-md-2 mt-4 ml-5 bg-secondary">
+  <h4 class="ml-3 text-light">管理者ログイン</h4>
+</div>
+<div class="container">
+ <div class="row">
+  <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+  <table class="table table-borderless" >
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+   <tr>
+    <td>
+    <%= f.label :メールアドレス %>
+    </td>
+   <td>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+   </td>
+  </tr>
+  </div>
+
+  <div class="field">
+   <tr>
+    <td>
+     <%= f.label :パスワード %>
+    </td>
+    <td>
+     <%= f.password_field :password, autocomplete: "current-password" %>
+    </td>
+   </tr>
+  </div>
+
+
+
+  <div class="actions">
+   <tr>
+    <td></td>
+    <td>
+    <%= f.submit "ログイン", class: "btn btn-primary" %>
+    </td>
+   </tr>
+  </div>
+
+<% end %>
+
+  </table>
+  </div>
+ </div>
+</div>
+<%= render "admin/shared/links" %>

@@ -1,0 +1,51 @@
+<div class="bg-secondary col-md-3 mt-4 ml-5">
+  <h4 class="text-light" >ログイン</h4>
+</div>
+<div class="bg-secondary mx-left col-md-5 mt-4 ml-4" style="width: 400px;">
+  <h6 class="text-light">会員の方はこちらからログイン</h6>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <table class="table table-borderless">
+          <thead></thead>
+            <tbody>
+              <tr>
+                <div class="field">
+                <td><%= f.label :メールアドレス %></td>
+                <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+
+                </div>
+              </tr>
+
+              <tr>
+                <div class="field">
+                <td><%= f.label :パスワード %></td>
+                <td><%= f.password_field :password, autocomplete: "current-password" %></td>
+              </tr>
+                </div>
+
+
+
+
+              <tr>
+                <div class="actions">
+                <td></td>
+                <td><%= f.submit "ログイン",  class: "btn btn-primary " %></td>
+              </tr>
+                </div>
+            </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="bg-secondary mx-left col-md-5 mt-4 ml-4" style="width: 400px;">
+  <h6 class="text-light">会員登録がお済みでない方</h6>
+</div>
+<div class="col-md-5 mt-4 ml-4">
+  <p><a href="https://8d2a67400f9149bf9723f36684acfaad.vfs.cloud9.ap-northeast-1.amazonaws.com/customers/sign_up"><u>こちら</u></a>から新規登録を行ってください。</p>
+</div>
+
+

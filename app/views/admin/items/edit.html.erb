@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="bg-secondary col-md-3">
+      <h4 class="text-light">商品編集</h4>
+    </div>
+  </div>
+  <div class="row ml-4 col-md-7">
+    <%= form_with model: @item, url: admin_item_path(@item.id), method: :patch do |f| %>
+      <div class="mt-4">
+        <%= f.label :name, "商品画像", class: "mr-4"%>
+        <%= f.file_field :image, accept: "image/*" %>
+      </div>
+      <div class="mt-4">
+        <%= f.label :name, "商品名", class: "mr-4"%>
+        <%= f.text_field :name %>
+      </div>
+      <div class="mt-4">
+        <%= f.label :introduction, "商品説明", class: "mr-4"%>
+        <%= f.text_area :introduction %>
+      </div>
+      <div class="mt-4">
+        <%= f.label :genre, "ジャンル名", class: "mr-4"%>
+        <%= f.collection_select :genre_id, @genres, :id, :name,  prompt: "選択してください" %>
+      </div>
+      <div class="mt-4">
+        <%= f.label :genre, "税抜き価格", class: "mr-4"%>
+        <%= f.text_field :price %>円
+      </div>
+      <div class="mt-4">
+      <%= f.label :is_active, "販売ステータス", class: "mr-4 mt-4"%>
+        <%= f.radio_button :is_active, true %>販売中
+        <%= f.radio_button :is_active, false %>販売停止中
+      </div>
+      <%= f.submit "変更を保存", class: "btn btn-success mt-4 ml-6" %>
+    <% end %>
+  </div>
+  </div>
+</div>

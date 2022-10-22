@@ -1,0 +1,20 @@
+<h2 class="mx-auto mt-5" style="width:400px;">商品一覧</h2>
+
+<div class="container">
+
+  <div class="row">
+    <% @items. each do |item| %>
+      <div class="col-md-4">
+        <%= image_tag item.image, size: "300x200" %><br />
+        <strong><%= link_to item_path(item.id), class:"text-reset mt-2" do %><%= item.name %><% end %></strong><br />
+        <strong>￥<%= item.add_tax_price.to_s(:delimited) %></strong>
+
+
+      </div>
+
+
+
+    <% end %>
+  </div>
+
+</div>
