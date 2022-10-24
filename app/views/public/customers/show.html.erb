@@ -9,11 +9,28 @@
       <h4>登録情報</h4>
     </div>
     <div class="col-md-3 mt-4">
-      <%=link_to customers_information_edit_path(customer.id), class: "btn btn-success" do %>編集する<% end %>
+      <%=link_to items_path, class: "btn btn-success" do %>編集する<% end %>
     </div>
   </div>
 
   <div class="row">
-
+    <div class="col-md-3 mt-4">
+      <h4>配送先</h4>
+    </div>
+    <div class="col-md-3 mt-4">
+      <%=link_to addresses_path, class: "btn btn-primary" do %>一覧を見る<% end %>
+    </div>
   </div>
+
+
+  <div class="row">
+    <div class="col-md-3 mt-4">
+      <h4>注文履歴</h4>
+    </div>
+    <div class="col-md-3 mt-4">
+      <%=link_to orders_path, class: "btn btn-primary" do %>一覧を見る<% end %>
+    </div>
+  </div>
+
+
 </div>

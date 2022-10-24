@@ -1,0 +1,35 @@
+<div class="bg-secondary col-md-3 mt-4 ml-5">
+  <h4 class="text-light">会員情報編集</h4>
+</div>
+<%= form_with model: @customer, url: customers_information_path, method: :patch do |f| %>
+<table class="table table-borderless">
+    <thead></thead>
+    <tbody>
+      <tr>
+        <td>名前</td>
+        <td><%= f.text_field :last_name %></td>
+        <td><%= f.text_field :first_name %></td>
+      </tr>
+　　　 <tr>
+        <td>フリガナ</td>
+        <td><%= f.text_field :last_name_kana %></td>
+        <td><%= f.text_field :first_name_kana %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :address, "住所" %></td>
+        <td><%= f.text_field :address, size: 60 %></td>
+      </tr>
+
+      <tr>
+        <td><%= f.label :telephone_number, "電話番号(ハイフンなし)" %></td>
+        <td><%= f.text_field :telephone_number %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email, "メールアドレス" %></td>
+        <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+      </tr>
+</table>
+<% end %>
+
+
+<%= link_to customers_unsubscribe_path, class: "btn btn-danger" do %>退会する<% end %>

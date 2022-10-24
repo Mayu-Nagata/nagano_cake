@@ -24,6 +24,8 @@ Rails.application.routes.draw do
    resources :orders, only: [ :new, :index, :show, :create]
 
    resources :items, only: [ :index, :edit, :create, :update, :destroy]
+
+   resources :addresses, only: [ :index, :edit, :create, :update, :destroy]
  end
 
  scope module: :admin do
