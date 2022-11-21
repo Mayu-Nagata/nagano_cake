@@ -1,0 +1,47 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="bg-secondary col-md-3">
+      <h4 class="text-light">配送先登録/一覧</h4>
+    </div>
+  </div>
+  <%= form_with model: @address, url: addresses_path, method: :post do |f| %>
+  <div class="row mt-4">
+    <div>郵便番号（ハイフンなし）</div>
+    <div><%= f.text_field :postal_code %></div>
+  </div>
+  <div class="row mt-1">
+    <div>住所</div>
+    <div><%= f.text_field :address, size: 60 %></div>
+  </div>
+  <div class="row mt-1">
+    <div>宛名</div>
+    <div><%= f.text_field :name %></div>
+    <div class="ml-3"><%= f.submit "新規登録", class: "btn btn-success" %></div>
+  </div>
+  <% end %>
+  <table class="table table-bordered">
+    <thead class="bg-light">
+      <tr>
+        <th>郵便番号</th>
+        <th>住所</th>
+        <th>宛名</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <% @addresses.each do |address| %>
+        <td><%= address.postal_code %></td>
+        <td><%= address.address %></td>
+        <td><%= address.name %></td>
+        <td>
+          <%= link_to edit_address_path(address.id), class: "btn btn-success" do %>編集する<% end %>
+          <%= link_to address_path(address.id), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-danger" do %>削除する<% end %>
+        </td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+
+</div>

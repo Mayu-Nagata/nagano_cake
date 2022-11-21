@@ -5,8 +5,8 @@ class CreateOrderDetails < ActiveRecord::Migration[6.1]
       t.references :item, foreign_key: true, null: false
       t.integer :price, null: false
       t.integer :amount, null: false
-      t.integer :making_status, null: false, default: "0"
+      t.integer :making_status 
       t.timestamps
-    end
+  end
   end
 end

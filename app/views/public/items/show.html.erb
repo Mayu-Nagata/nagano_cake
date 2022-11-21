@@ -8,8 +8,12 @@
       <h2><%= @item.name %></h2><br />
       <h6><%= @item.introduction %></h6><br />
       <h4><strong>￥<%= @item.add_tax_price.to_s(:delimited) %></strong><small>(税込)</small></h4>
-      
-      
+      <%= form_with model: @cart_item, url: cart_items_path, method: :post do |f| %>
+        <%= f.select :amount, *[1..30] %>
+        <%= f.hidden_field :item_id, :value => @item.id %>
+        <%= f.submit "カートに入れる", class: "btn btn-success ml-4" %>
+      <% end %>
+
     </div>
   </div>
 </div>

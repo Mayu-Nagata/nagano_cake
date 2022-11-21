@@ -10,6 +10,7 @@
     </h4><br />
     <div class="mx-auto col-md-3 col-md-offset-4">
       <%= link_to items_path, class:"btn btn-primary" do %>退会しない<% end %>
+      <%= link_to customers_withdraw_path, method: :patch, "data-confirm" => "本当に退会しますか？", class: "btn btn-danger" do %>退会する<% end %>
     </div>
   </div>
 </div>

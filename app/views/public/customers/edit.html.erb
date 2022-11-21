@@ -10,10 +10,14 @@
         <td><%= f.text_field :last_name %></td>
         <td><%= f.text_field :first_name %></td>
       </tr>
-　　　 <tr>
+      <tr>
         <td>フリガナ</td>
         <td><%= f.text_field :last_name_kana %></td>
         <td><%= f.text_field :first_name_kana %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :postal_code, "郵便番号" %></td>
+        <td><%= f.text_field :postal_code %></td>
       </tr>
       <tr>
         <td><%= f.label :address, "住所" %></td>
@@ -29,7 +33,8 @@
         <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
       </tr>
 </table>
+<%= f.submit "編集内容を保存", class: "btn btn-success ml-4" %>
+
+
+<%= link_to customers_unsubscribe_path, class: "btn btn-danger ml-2" do %>退会する<% end %>
 <% end %>
-
-
-<%= link_to customers_unsubscribe_path, class: "btn btn-danger" do %>退会する<% end %>

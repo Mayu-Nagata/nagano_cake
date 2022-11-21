@@ -1,6 +1,10 @@
-<h2 class="mx-auto mt-5" style="width:400px;">商品一覧</h2>
-
 <div class="container">
+
+  <div class ="row">
+    <div class="mt-5 col-md-7"><h2><strong>商品一覧</strong><small>(全<%= @items.count %>件)</small></h2></div>
+  </div>
+
+
 
   <div class="row">
     <% @items. each do |item| %>
@@ -16,5 +20,6 @@
 
     <% end %>
   </div>
+  <%=paginate @items %>
 
 </div>
